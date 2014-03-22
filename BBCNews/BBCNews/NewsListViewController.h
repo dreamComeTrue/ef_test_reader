@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewsListViewController : UITableViewController
+@interface NewsListViewController : UITableViewController {
+    NSArray *_news;
+}
 
 @end
