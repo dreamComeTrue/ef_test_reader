@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "NewsStorage.h"
 
 @implementation AppDelegate
 
@@ -29,7 +30,7 @@
         if (!error) {
             [newsString writeToFile:[self newsFilePath] atomically:YES encoding:NSUTF8StringEncoding error:&error];
             if (!error) {
-                NSLog(@"news:\n%@", newsString);
+                //NSLog(@"news:\n%@", newsString);
                 [[NSNotificationCenter defaultCenter] postNotificationName:strNoteNewsDidLoad object:nil userInfo:nil];
             }
         }

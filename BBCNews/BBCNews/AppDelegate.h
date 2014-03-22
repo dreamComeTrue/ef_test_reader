@@ -14,4 +14,6 @@ void (^loadNews)();
 
 @property (strong, nonatomic) UIWindow *window;
 
+- (NSString *)newsFilePath;
+
 @end

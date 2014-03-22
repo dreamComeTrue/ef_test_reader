@@ -22,6 +22,9 @@
 		E9EB75E618DDB730004C3F51 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9EB75E418DDB730004C3F51 /* InfoPlist.strings */; };
 		E9EB75E818DDB730004C3F51 /* BBCNewsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB75E718DDB730004C3F51 /* BBCNewsTests.m */; };
 		E9EB75F318DDC55B004C3F51 /* NewsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB75F218DDC55B004C3F51 /* NewsListViewController.m */; };
+		E9EB75F618DDC71E004C3F51 /* NewsStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB75F518DDC71E004C3F51 /* NewsStorage.m */; };
+		E9EB75FB18DDCA16004C3F51 /* XMLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB75FA18DDCA16004C3F51 /* XMLDictionary.m */; };
+		E9EB75FE18DDCCE7004C3F51 /* NewsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB75FD18DDCCE7004C3F51 /* NewsItem.m */; };
 		E9EB760118DDCEDE004C3F51 /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB760018DDCEDE004C3F51 /* NewsCell.m */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +59,12 @@
 		E9EB75E718DDB730004C3F51 /* BBCNewsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBCNewsTests.m; sourceTree = "<group>"; };
 		E9EB75F118DDC55B004C3F51 /* NewsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsListViewController.h; sourceTree = "<group>"; };
 		E9EB75F218DDC55B004C3F51 /* NewsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsListViewController.m; sourceTree = "<group>"; };
+		E9EB75F418DDC71E004C3F51 /* NewsStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsStorage.h; sourceTree = "<group>"; };
+		E9EB75F518DDC71E004C3F51 /* NewsStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsStorage.m; sourceTree = "<group>"; };
+		E9EB75F918DDCA16004C3F51 /* XMLDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLDictionary.h; sourceTree = "<group>"; };
+		E9EB75FA18DDCA16004C3F51 /* XMLDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLDictionary.m; sourceTree = "<group>"; };
+		E9EB75FC18DDCCE7004C3F51 /* NewsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsItem.h; sourceTree = "<group>"; };
+		E9EB75FD18DDCCE7004C3F51 /* NewsItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsItem.m; sourceTree = "<group>"; };
 		E9EB75FF18DDCEDE004C3F51 /* NewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCell.h; sourceTree = "<group>"; };
 		E9EB760018DDCEDE004C3F51 /* NewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,6 +126,7 @@
 		E9EB75BF18DDB730004C3F51 /* BBCNews */ = {
 			isa = PBXGroup;
 			children = (
+				E9EB75F718DDCA16004C3F51 /* 3rd Party */,
 				E9EB75C818DDB730004C3F51 /* AppDelegate.h */,
 				E9EB75C918DDB730004C3F51 /* AppDelegate.m */,
 				E9EB75CB18DDB730004C3F51 /* Main_iPhone.storyboard */,
@@ -125,6 +135,10 @@
 				E9EB75C018DDB730004C3F51 /* Supporting Files */,
 				E9EB75F118DDC55B004C3F51 /* NewsListViewController.h */,
 				E9EB75F218DDC55B004C3F51 /* NewsListViewController.m */,
+				E9EB75F418DDC71E004C3F51 /* NewsStorage.h */,
+				E9EB75F518DDC71E004C3F51 /* NewsStorage.m */,
+				E9EB75FC18DDCCE7004C3F51 /* NewsItem.h */,
+				E9EB75FD18DDCCE7004C3F51 /* NewsItem.m */,
 				E9EB75FF18DDCEDE004C3F51 /* NewsCell.h */,
 				E9EB760018DDCEDE004C3F51 /* NewsCell.m */,
 			);
@@ -158,6 +172,23 @@
 				E9EB75E418DDB730004C3F51 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E9EB75F718DDCA16004C3F51 /* 3rd Party */ = {
+			isa = PBXGroup;
+			children = (
+				E9EB75F818DDCA16004C3F51 /* XMLDictionary */,
+			);
+			path = "3rd Party";
+			sourceTree = "<group>";
+		};
+		E9EB75F818DDCA16004C3F51 /* XMLDictionary */ = {
+			isa = PBXGroup;
+			children = (
+				E9EB75F918DDCA16004C3F51 /* XMLDictionary.h */,
+				E9EB75FA18DDCA16004C3F51 /* XMLDictionary.m */,
+			);
+			path = XMLDictionary;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +289,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9EB75FB18DDCA16004C3F51 /* XMLDictionary.m in Sources */,
 				E9EB75CA18DDB730004C3F51 /* AppDelegate.m in Sources */,
 				E9EB75C618DDB730004C3F51 /* main.m in Sources */,
 				E9EB760118DDCEDE004C3F51 /* NewsCell.m in Sources */,
+				E9EB75FE18DDCCE7004C3F51 /* NewsItem.m in Sources */,
+				E9EB75F618DDC71E004C3F51 /* NewsStorage.m in Sources */,
 				E9EB75F318DDC55B004C3F51 /* NewsListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
