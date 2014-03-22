@@ -62,11 +62,20 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _news.count;
+    NSInteger count = _news.count > 0 ? _news.count : 1;
+    return count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (_news.count == 0) {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EmptyListCell"];
+        UILabel *label = (UILabel *)[cell viewWithTag:1];
+        
+        label.text = [NewsStorage isLoading] ? @"Loading feed" : @"Feed is empty";
+        return cell;
+    }
+    
     NewsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NewsCell" forIndexPath:indexPath];
     
     // Configure the cell...
