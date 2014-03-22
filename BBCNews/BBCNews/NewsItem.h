@@ -18,7 +18,7 @@
 - (NSString *)shortDescription;
 - (NSURL *)url;
 - (NSDate *)date;
-- (NSURL *)imageSmallUrl;
-- (NSURL *)imageBigUrl;
+- (NSString *)imageSmallUrl;
+- (NSString *)imageBigUrl;
 
 @end

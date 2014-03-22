@@ -12,6 +12,7 @@
 #import "NewsCell.h"
 #import "NewsItemViewController.h"
 #import "AppDelegate.h"
+#import "ImageCache.h"
 
 @interface NewsListViewController ()
 
@@ -81,11 +82,9 @@
     // Configure the cell...
     NewsItem *item = _news[indexPath.row];
     
-#warning Cache image
     cell.imageView.image = nil;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSData *imgData = [NSData dataWithContentsOfURL:item.imageSmallUrl];
-        UIImage *img = [UIImage imageWithData:imgData];
+        UIImage *img = [ImageCache imageWithUrl:item.imageSmallUrl];
         dispatch_async(dispatch_get_main_queue(), ^{
             cell.imageView.image = img;
             [cell setNeedsLayout];

@@ -40,7 +40,7 @@
     return [df dateFromString:pubDate];
 }
 
-- (NSURL *)imageSmallUrl {
+- (NSString *)imageSmallUrl {
     NSDictionary *requiredDict = nil;
     for(NSDictionary *imgDict in _newsDictionary[@"media:thumbnail"]) {
         if (requiredDict[@"_width"] > imgDict[@"_width"]) {
@@ -49,10 +49,10 @@
         if (!requiredDict)
             requiredDict = imgDict;
     }
-    return [NSURL URLWithString:requiredDict[@"_url"]];
+    return requiredDict[@"_url"];
 }
 
-- (NSURL *)imageBigUrl {
+- (NSString *)imageBigUrl {
     NSDictionary *requiredDict = nil;
     for(NSDictionary *imgDict in _newsDictionary[@"media:thumbnail"]) {
         if (requiredDict[@"_width"] < imgDict[@"_width"]) {
@@ -61,7 +61,7 @@
         if (!requiredDict)
             requiredDict = imgDict;
     }
-    return [NSURL URLWithString:requiredDict[@"_url"]];
+    return requiredDict[@"_url"];
 }
 
 @end

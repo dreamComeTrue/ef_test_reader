@@ -8,6 +8,7 @@
 
 #import "NewsItemViewController.h"
 #import "NewsItem.h"
+#import "ImageCache.h"
 
 @interface NewsItemViewController ()
 
@@ -65,8 +66,7 @@
             cell = [tableView dequeueReusableCellWithIdentifier:@"ImageCell" forIndexPath:indexPath];
             UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                NSData *imgData = [NSData dataWithContentsOfURL:self.item.imageBigUrl];
-                UIImage *img = [UIImage imageWithData:imgData];
+                UIImage *img = [ImageCache imageWithUrl:_item.imageBigUrl];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     imageView.image = img;
                 });
