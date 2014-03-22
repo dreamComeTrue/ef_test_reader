@@ -12,7 +12,4 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-+ (NSString *)newsFilePath;
-+ (void)refreshNews;
-
 @end

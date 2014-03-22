@@ -8,8 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NewsStorage : NSObject
+@interface NewsStorage : NSObject {
+    BOOL _isLoading;
+}
 
++ (BOOL)isLoading;
++ (NSString *)newsFilePath;
++ (void)refreshNews;
 + (NSArray *)news;
 
 @end

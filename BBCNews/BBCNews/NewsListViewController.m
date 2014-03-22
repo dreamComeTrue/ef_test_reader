@@ -49,7 +49,7 @@
 }
 
 - (void)refreshDataAction:(id)sender {
-    [AppDelegate refreshNews];
+    [NewsStorage refreshNews];
 }
 
 - (void)reloadData:(NSNotification *)note {
