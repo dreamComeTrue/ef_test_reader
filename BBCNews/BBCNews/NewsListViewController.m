@@ -10,6 +10,8 @@
 #import "NewsStorage.h"
 #import "NewsItem.h"
 #import "NewsCell.h"
+#import "NewsItemViewController.h"
+#import "AppDelegate.h"
 
 @interface NewsListViewController ()
 
@@ -31,18 +33,29 @@
     [super viewDidLoad];
     
     // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.clearsSelectionOnViewWillAppear = YES;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshDataAction:)];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadData:) name:strNoteNewsDidLoad object:nil];
+
     _news = [NewsStorage news];
-    NSLog(@"news: %@", _news);
+    //NSLog(@"news: %@", _news);
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)refreshDataAction:(id)sender {
+    [AppDelegate refreshNews];
+}
+
+- (void)reloadData:(NSNotification *)note {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
 }
 
 #pragma mark - Table view data source
@@ -67,15 +80,18 @@
     return cell;
 }
 
-/*
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NewsItemViewController *nivc = [self.storyboard instantiateViewControllerWithIdentifier:@"NewsItemViewController"];
+    nivc.item = _news[indexPath.row];
+    [self.navigationController pushViewController:nivc animated:YES];
+}
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
 
 @end

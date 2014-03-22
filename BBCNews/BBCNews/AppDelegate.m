@@ -11,42 +11,11 @@
 
 @implementation AppDelegate
 
-#warning Move to Storage class
-- (NSString *)newsFilePath {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-    return [paths[0] stringByAppendingPathComponent:@"news.xml"];
-}
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    loadNews = ^(){
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-        });
-        NSURL *url = [NSURL URLWithString:NEWS_URL];
-        NSError *error = nil;
-        NSString *newsString = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
-        if (!error) {
-            [newsString writeToFile:[self newsFilePath] atomically:YES encoding:NSUTF8StringEncoding error:&error];
-            if (!error) {
-                //NSLog(@"news:\n%@", newsString);
-                [[NSNotificationCenter defaultCenter] postNotificationName:strNoteNewsDidLoad object:nil userInfo:nil];
-            }
-        }
-        if (error) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Loading error" message:error.localizedDescription delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
-                [alert show];
-            });
-            [[NSNotificationCenter defaultCenter] postNotificationName:strNoteNewsDidLoadFailed object:nil userInfo:nil];
-        }
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-        });
-    };
+    [AppDelegate refreshNews];
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), loadNews);
     return YES;
 }
 							
@@ -75,6 +44,42 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#warning Move to Storage class
++ (NSString *)newsFilePath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    return [paths[0] stringByAppendingPathComponent:@"news.xml"];
+}
+
++ (void)refreshNews {
+    void (^loadNews)() = ^(){
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+        });
+        NSURL *url = [NSURL URLWithString:NEWS_URL];
+        NSError *error = nil;
+        NSString *newsString = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
+        if (!error) {
+            [newsString writeToFile:[self newsFilePath] atomically:YES encoding:NSUTF8StringEncoding error:&error];
+            if (!error) {
+                //NSLog(@"news:\n%@", newsString);
+                [[NSNotificationCenter defaultCenter] postNotificationName:strNoteNewsDidLoad object:nil userInfo:nil];
+            }
+        }
+        if (error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Loading error" message:error.localizedDescription delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+                [alert show];
+            });
+            [[NSNotificationCenter defaultCenter] postNotificationName:strNoteNewsDidLoadFailed object:nil userInfo:nil];
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        });
+    };
+
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), loadNews);
 }
 
 @end

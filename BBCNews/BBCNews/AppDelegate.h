@@ -8,12 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-void (^loadNews)();
-
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-- (NSString *)newsFilePath;
++ (NSString *)newsFilePath;
++ (void)refreshNews;
 
 @end

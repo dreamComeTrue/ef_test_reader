@@ -26,6 +26,7 @@
 		E9EB75FB18DDCA16004C3F51 /* XMLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB75FA18DDCA16004C3F51 /* XMLDictionary.m */; };
 		E9EB75FE18DDCCE7004C3F51 /* NewsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB75FD18DDCCE7004C3F51 /* NewsItem.m */; };
 		E9EB760118DDCEDE004C3F51 /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB760018DDCEDE004C3F51 /* NewsCell.m */; };
+		E9EB760418DDD36C004C3F51 /* NewsItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB760318DDD36C004C3F51 /* NewsItemViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		E9EB75FD18DDCCE7004C3F51 /* NewsItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsItem.m; sourceTree = "<group>"; };
 		E9EB75FF18DDCEDE004C3F51 /* NewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCell.h; sourceTree = "<group>"; };
 		E9EB760018DDCEDE004C3F51 /* NewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCell.m; sourceTree = "<group>"; };
+		E9EB760218DDD36C004C3F51 /* NewsItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsItemViewController.h; sourceTree = "<group>"; };
+		E9EB760318DDD36C004C3F51 /* NewsItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsItemViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +144,8 @@
 				E9EB75FD18DDCCE7004C3F51 /* NewsItem.m */,
 				E9EB75FF18DDCEDE004C3F51 /* NewsCell.h */,
 				E9EB760018DDCEDE004C3F51 /* NewsCell.m */,
+				E9EB760218DDD36C004C3F51 /* NewsItemViewController.h */,
+				E9EB760318DDD36C004C3F51 /* NewsItemViewController.m */,
 			);
 			path = BBCNews;
 			sourceTree = "<group>";
@@ -295,6 +300,7 @@
 				E9EB760118DDCEDE004C3F51 /* NewsCell.m in Sources */,
 				E9EB75FE18DDCCE7004C3F51 /* NewsItem.m in Sources */,
 				E9EB75F618DDC71E004C3F51 /* NewsStorage.m in Sources */,
+				E9EB760418DDD36C004C3F51 /* NewsItemViewController.m in Sources */,
 				E9EB75F318DDC55B004C3F51 /* NewsListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
