@@ -22,6 +22,7 @@
 		E9EB75E618DDB730004C3F51 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9EB75E418DDB730004C3F51 /* InfoPlist.strings */; };
 		E9EB75E818DDB730004C3F51 /* BBCNewsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB75E718DDB730004C3F51 /* BBCNewsTests.m */; };
 		E9EB75F318DDC55B004C3F51 /* NewsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB75F218DDC55B004C3F51 /* NewsListViewController.m */; };
+		E9EB760118DDCEDE004C3F51 /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB760018DDCEDE004C3F51 /* NewsCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		E9EB75E718DDB730004C3F51 /* BBCNewsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBCNewsTests.m; sourceTree = "<group>"; };
 		E9EB75F118DDC55B004C3F51 /* NewsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsListViewController.h; sourceTree = "<group>"; };
 		E9EB75F218DDC55B004C3F51 /* NewsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsListViewController.m; sourceTree = "<group>"; };
+		E9EB75FF18DDCEDE004C3F51 /* NewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCell.h; sourceTree = "<group>"; };
+		E9EB760018DDCEDE004C3F51 /* NewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +125,8 @@
 				E9EB75C018DDB730004C3F51 /* Supporting Files */,
 				E9EB75F118DDC55B004C3F51 /* NewsListViewController.h */,
 				E9EB75F218DDC55B004C3F51 /* NewsListViewController.m */,
+				E9EB75FF18DDCEDE004C3F51 /* NewsCell.h */,
+				E9EB760018DDCEDE004C3F51 /* NewsCell.m */,
 			);
 			path = BBCNews;
 			sourceTree = "<group>";
@@ -255,6 +260,7 @@
 			files = (
 				E9EB75CA18DDB730004C3F51 /* AppDelegate.m in Sources */,
 				E9EB75C618DDB730004C3F51 /* main.m in Sources */,
+				E9EB760118DDCEDE004C3F51 /* NewsCell.m in Sources */,
 				E9EB75F318DDC55B004C3F51 /* NewsListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
