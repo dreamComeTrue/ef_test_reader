@@ -65,12 +65,15 @@
         case 0: {
             cell = [tableView dequeueReusableCellWithIdentifier:@"ImageCell" forIndexPath:indexPath];
             UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                UIImage *img = [ImageCache imageWithUrl:_item.imageBigUrl];
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    imageView.image = img;
+            cell.imageView.image = [UIImage imageNamed:@"noimage.jpg"];
+            if (_item.imageBigUrl) {
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                    UIImage *img = [ImageCache imageWithUrl:_item.imageBigUrl];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        imageView.image = img;
+                    });
                 });
-            });
+            }
             break;
         }
         case 1: {

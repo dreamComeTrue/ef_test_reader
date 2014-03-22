@@ -69,7 +69,8 @@ NewsStorage *instance = nil;
         dispatch_async(dispatch_get_main_queue(), ^{
             [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
         });
-        NSURL *url = [NSURL URLWithString:NEWS_URL];
+        NSString *feedUrl = [[NSUserDefaults standardUserDefaults] stringForKey:@"feed_url"];
+        NSURL *url = [NSURL URLWithString:feedUrl];
         NSError *error = nil;
         NSString *newsString = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
         if (!error) {

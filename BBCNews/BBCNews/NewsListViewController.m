@@ -95,14 +95,16 @@
     // Configure the cell...
     NewsItem *item = _news[indexPath.row];
     
-    cell.imageView.image = nil;
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        UIImage *img = [ImageCache imageWithUrl:item.imageSmallUrl];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            cell.imageView.image = img;
-            [cell setNeedsLayout];
+    cell.image.image = [UIImage imageNamed:@"noimage.jpg"];
+    if (item.imageSmallUrl) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            UIImage *img = [ImageCache imageWithUrl:item.imageSmallUrl];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                cell.image.image = img;
+                [cell setNeedsLayout];
+            });
         });
-    });
+    }
 
     cell.title.text = item.title;
     cell.shortDescription.text = item.shortDescription;
