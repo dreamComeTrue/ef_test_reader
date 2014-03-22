@@ -13,21 +13,13 @@
 #import "NewsItemViewController.h"
 #import "AppDelegate.h"
 #import "ImageCache.h"
+#import "Reachability.h"
 
 @interface NewsListViewController ()
 
 @end
 
 @implementation NewsListViewController
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -38,6 +30,10 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshDataAction:)];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadData:) name:strNoteNewsDidLoad object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:kReachabilityChangedNotification object:nil];
+
+    _reachability = [Reachability reachabilityWithHostName:@"www.google.com"];
+    [_reachability startNotifier];
 
     _news = [NewsStorage news];
     //NSLog(@"news: %@", _news);
@@ -57,6 +53,19 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.tableView reloadData];
     });
+}
+
+- (void)reachabilityChanged:(NSNotification *)notification {
+    if([_reachability currentReachabilityStatus] == NotReachable) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Offline" style:UIBarButtonItemStylePlain target:nil action:nil];
+        });
+    }
+    else {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshDataAction:)];
+        });
+    }
 }
 
 #pragma mark - Table view data source

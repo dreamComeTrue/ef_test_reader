@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class Reachability;
+
 @interface NewsListViewController : UITableViewController {
     NSArray *_news;
+    Reachability *_reachability;
 }
 
 @end

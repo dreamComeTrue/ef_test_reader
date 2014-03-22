@@ -28,6 +28,8 @@
 		E9EB760118DDCEDE004C3F51 /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB760018DDCEDE004C3F51 /* NewsCell.m */; };
 		E9EB760418DDD36C004C3F51 /* NewsItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB760318DDD36C004C3F51 /* NewsItemViewController.m */; };
 		E9EB760718DDEF84004C3F51 /* ImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB760618DDEF84004C3F51 /* ImageCache.m */; };
+		E9EB760B18DDF6EB004C3F51 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB760A18DDF6EB004C3F51 /* Reachability.m */; };
+		E9EB760D18DDF711004C3F51 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EB760C18DDF711004C3F51 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,9 @@
 		E9EB760318DDD36C004C3F51 /* NewsItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsItemViewController.m; sourceTree = "<group>"; };
 		E9EB760518DDEF84004C3F51 /* ImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCache.h; sourceTree = "<group>"; };
 		E9EB760618DDEF84004C3F51 /* ImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCache.m; sourceTree = "<group>"; };
+		E9EB760918DDF6EB004C3F51 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		E9EB760A18DDF6EB004C3F51 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		E9EB760C18DDF711004C3F51 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9EB760D18DDF711004C3F51 /* SystemConfiguration.framework in Frameworks */,
 				E9EB75BC18DDB730004C3F51 /* CoreGraphics.framework in Frameworks */,
 				E9EB75BE18DDB730004C3F51 /* UIKit.framework in Frameworks */,
 				E9EB75BA18DDB730004C3F51 /* Foundation.framework in Frameworks */,
@@ -121,6 +127,7 @@
 		E9EB75B818DDB730004C3F51 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E9EB760C18DDF711004C3F51 /* SystemConfiguration.framework */,
 				E9EB75B918DDB730004C3F51 /* Foundation.framework */,
 				E9EB75BB18DDB730004C3F51 /* CoreGraphics.framework */,
 				E9EB75BD18DDB730004C3F51 /* UIKit.framework */,
@@ -187,6 +194,7 @@
 		E9EB75F718DDCA16004C3F51 /* 3rd Party */ = {
 			isa = PBXGroup;
 			children = (
+				E9EB760818DDF6EB004C3F51 /* Reachability */,
 				E9EB75F818DDCA16004C3F51 /* XMLDictionary */,
 			);
 			path = "3rd Party";
@@ -199,6 +207,15 @@
 				E9EB75FA18DDCA16004C3F51 /* XMLDictionary.m */,
 			);
 			path = XMLDictionary;
+			sourceTree = "<group>";
+		};
+		E9EB760818DDF6EB004C3F51 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				E9EB760918DDF6EB004C3F51 /* Reachability.h */,
+				E9EB760A18DDF6EB004C3F51 /* Reachability.m */,
+			);
+			path = Reachability;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,6 +320,7 @@
 				E9EB75CA18DDB730004C3F51 /* AppDelegate.m in Sources */,
 				E9EB75C618DDB730004C3F51 /* main.m in Sources */,
 				E9EB760118DDCEDE004C3F51 /* NewsCell.m in Sources */,
+				E9EB760B18DDF6EB004C3F51 /* Reachability.m in Sources */,
 				E9EB75FE18DDCCE7004C3F51 /* NewsItem.m in Sources */,
 				E9EB75F618DDC71E004C3F51 /* NewsStorage.m in Sources */,
 				E9EB760418DDD36C004C3F51 /* NewsItemViewController.m in Sources */,
