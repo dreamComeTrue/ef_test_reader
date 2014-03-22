@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  NewsListViewController.h
 //  BBCNews
 //
 //  Created by Pavel Yakimenko on 3/22/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface NewsListViewController : UITableViewController
 
 @end

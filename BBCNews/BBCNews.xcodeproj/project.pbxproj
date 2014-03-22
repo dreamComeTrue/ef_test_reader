@@ -15,13 +15,13 @@
 		E9EB75CA18DDB730004C3F51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB75C918DDB730004C3F51 /* AppDelegate.m */; };
 		E9EB75CD18DDB730004C3F51 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9EB75CB18DDB730004C3F51 /* Main_iPhone.storyboard */; };
 		E9EB75D018DDB730004C3F51 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9EB75CE18DDB730004C3F51 /* Main_iPad.storyboard */; };
-		E9EB75D318DDB730004C3F51 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB75D218DDB730004C3F51 /* ViewController.m */; };
 		E9EB75D518DDB730004C3F51 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9EB75D418DDB730004C3F51 /* Images.xcassets */; };
 		E9EB75DC18DDB730004C3F51 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EB75DB18DDB730004C3F51 /* XCTest.framework */; };
 		E9EB75DD18DDB730004C3F51 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EB75B918DDB730004C3F51 /* Foundation.framework */; };
 		E9EB75DE18DDB730004C3F51 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EB75BD18DDB730004C3F51 /* UIKit.framework */; };
 		E9EB75E618DDB730004C3F51 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9EB75E418DDB730004C3F51 /* InfoPlist.strings */; };
 		E9EB75E818DDB730004C3F51 /* BBCNewsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB75E718DDB730004C3F51 /* BBCNewsTests.m */; };
+		E9EB75F318DDC55B004C3F51 /* NewsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EB75F218DDC55B004C3F51 /* NewsListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,14 +47,14 @@
 		E9EB75C918DDB730004C3F51 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E9EB75CC18DDB730004C3F51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		E9EB75CF18DDB730004C3F51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		E9EB75D118DDB730004C3F51 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E9EB75D218DDB730004C3F51 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E9EB75D418DDB730004C3F51 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E9EB75DA18DDB730004C3F51 /* BBCNewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BBCNewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9EB75DB18DDB730004C3F51 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		E9EB75E318DDB730004C3F51 /* BBCNewsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BBCNewsTests-Info.plist"; sourceTree = "<group>"; };
 		E9EB75E518DDB730004C3F51 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E9EB75E718DDB730004C3F51 /* BBCNewsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBCNewsTests.m; sourceTree = "<group>"; };
+		E9EB75F118DDC55B004C3F51 /* NewsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsListViewController.h; sourceTree = "<group>"; };
+		E9EB75F218DDC55B004C3F51 /* NewsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,10 +118,10 @@
 				E9EB75C918DDB730004C3F51 /* AppDelegate.m */,
 				E9EB75CB18DDB730004C3F51 /* Main_iPhone.storyboard */,
 				E9EB75CE18DDB730004C3F51 /* Main_iPad.storyboard */,
-				E9EB75D118DDB730004C3F51 /* ViewController.h */,
-				E9EB75D218DDB730004C3F51 /* ViewController.m */,
 				E9EB75D418DDB730004C3F51 /* Images.xcassets */,
 				E9EB75C018DDB730004C3F51 /* Supporting Files */,
+				E9EB75F118DDC55B004C3F51 /* NewsListViewController.h */,
+				E9EB75F218DDC55B004C3F51 /* NewsListViewController.m */,
 			);
 			path = BBCNews;
 			sourceTree = "<group>";
@@ -253,9 +253,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9EB75D318DDB730004C3F51 /* ViewController.m in Sources */,
 				E9EB75CA18DDB730004C3F51 /* AppDelegate.m in Sources */,
 				E9EB75C618DDB730004C3F51 /* main.m in Sources */,
+				E9EB75F318DDC55B004C3F51 /* NewsListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
