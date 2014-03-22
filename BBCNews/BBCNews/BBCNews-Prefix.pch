@@ -14,3 +14,10 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
+
+#warning Replace with 'Settings' option
+#define NEWS_URL @"http://feeds.bbci.co.uk/news/rss.xml"
+
+// Notifications
+#define strNoteNewsDidLoad @"strNoteNewsDidLoad"
+#define strNoteNewsDidLoadFailed @"strNoteNewsDidLoadFailed"
