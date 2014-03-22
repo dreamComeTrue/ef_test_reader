@@ -36,7 +36,8 @@
     [_reachability startNotifier];
 
     _news = [NewsStorage news];
-    //NSLog(@"news: %@", _news);
+    
+    [self refreshDataAction:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,6 +52,7 @@
 
 - (void)reloadData:(NSNotification *)note {
     dispatch_async(dispatch_get_main_queue(), ^{
+        _news = [NewsStorage news];
         [self.tableView reloadData];
     });
 }
