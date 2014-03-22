@@ -14,7 +14,7 @@
 @implementation NewsStorage
 
 + (NSArray *)news {
-    NSDictionary *data = [NSDictionary dictionaryWithXMLFile:[(AppDelegate *)[UIApplication sharedApplication].delegate newsFilePath]];
+    NSDictionary *data = [NSDictionary dictionaryWithXMLFile:[AppDelegate newsFilePath]];
     //NSLog(@"data: %@", data);
     
     NSArray *rawData = data[@"channel"][@"item"];
@@ -29,6 +29,13 @@
         NewsItem *item = [[NewsItem alloc] initWithDictionary:rawItem];
         [newsArray addObject:item];
     }
+    [newsArray sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        NewsItem *n1 = (NewsItem *)obj1;
+        NewsItem *n2 = (NewsItem *)obj2;
+        
+        return [n1.date compare:n2.date];
+
+    }];
     return newsArray;
 }
 

@@ -16,5 +16,7 @@
 
 - (NSString *)title;
 - (NSString *)shortDescription;
+- (NSURL *)url;
+- (NSDate *)date;
 
 @end
