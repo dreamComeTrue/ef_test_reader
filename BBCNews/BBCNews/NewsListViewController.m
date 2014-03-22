@@ -36,6 +36,7 @@
     [_reachability startNotifier];
 
     _news = [NewsStorage news];
+    self.navigationItem.title = [NewsStorage channelName];
     
     [self refreshDataAction:nil];
 }
@@ -53,6 +54,7 @@
 - (void)reloadData:(NSNotification *)note {
     dispatch_async(dispatch_get_main_queue(), ^{
         _news = [NewsStorage news];
+        self.navigationItem.title = [NewsStorage channelName];
         [self.tableView reloadData];
     });
 }

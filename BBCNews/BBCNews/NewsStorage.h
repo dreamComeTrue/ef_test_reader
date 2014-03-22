@@ -14,6 +14,7 @@
 
 + (BOOL)isLoading;
 + (NSString *)newsFilePath;
++ (NSString *)channelName;
 + (void)refreshNews;
 + (NSArray *)news;
 

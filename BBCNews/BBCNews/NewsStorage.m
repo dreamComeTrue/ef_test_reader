@@ -31,6 +31,12 @@ NewsStorage *instance = nil;
     return [paths[0] stringByAppendingPathComponent:@"news.xml"];
 }
 
++ (NSString *)channelName {
+    NSDictionary *data = [NSDictionary dictionaryWithXMLFile:[self newsFilePath]];
+    NSString *name = data[@"channel"][@"title"];
+    return name;
+}
+
 + (NSArray *)news {
     NSDictionary *data = [NSDictionary dictionaryWithXMLFile:[self newsFilePath]];
     //NSLog(@"data: %@", data);
