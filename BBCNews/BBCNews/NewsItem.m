@@ -40,4 +40,28 @@
     return [df dateFromString:pubDate];
 }
 
+- (NSURL *)imageSmallUrl {
+    NSDictionary *requiredDict = nil;
+    for(NSDictionary *imgDict in _newsDictionary[@"media:thumbnail"]) {
+        if (requiredDict[@"_width"] > imgDict[@"_width"]) {
+            requiredDict = imgDict;
+        }
+        if (!requiredDict)
+            requiredDict = imgDict;
+    }
+    return [NSURL URLWithString:requiredDict[@"_url"]];
+}
+
+- (NSURL *)imageBigUrl {
+    NSDictionary *requiredDict = nil;
+    for(NSDictionary *imgDict in _newsDictionary[@"media:thumbnail"]) {
+        if (requiredDict[@"_width"] < imgDict[@"_width"]) {
+            requiredDict = imgDict;
+        }
+        if (!requiredDict)
+            requiredDict = imgDict;
+    }
+    return [NSURL URLWithString:requiredDict[@"_url"]];
+}
+
 @end

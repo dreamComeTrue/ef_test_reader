@@ -73,7 +73,16 @@
     NewsItem *item = _news[indexPath.row];
     
 #warning Cache image
-    //cell.imageView.image = nil;
+    cell.imageView.image = nil;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSData *imgData = [NSData dataWithContentsOfURL:item.imageSmallUrl];
+        UIImage *img = [UIImage imageWithData:imgData];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            cell.imageView.image = img;
+            [cell setNeedsLayout];
+        });
+    });
+
     cell.title.text = item.title;
     cell.shortDescription.text = item.shortDescription;
     
